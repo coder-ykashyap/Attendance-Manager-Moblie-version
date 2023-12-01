@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dark Theme Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            /* Increased padding for both left and right sides */
+            background: linear-gradient(to right, #2c2c2c, #222222);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #78c7ff;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+        }
+
+        .options a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .options a:hover {
+            color: #78c7ff;
+        }
+
+        .options .icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333333;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            text-align: left;
+            /* Center the content */
+            left: 50%;
+            /* Move to the center */
+            transform: translateX(-50%);
+            /* Adjust for the width */
+        }
+
+
+        .dropdown-content a {
+            color: #ffffff;
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555555;
+        }
+
+        .dropdown-content .submit-btn {
+            display: block;
+            margin: 10px auto;
+            /* Center the submit button */
+            background-color: #78c7ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown-content .submit-btn:hover {
+            background-color: #5e9fe2;
+        }
+
+        .dropdown-open .dropdown-content {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+                /* Adjust padding for small screens */
+            }
+
+            .options {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="brand">Yogesh Kashyap</div>
+        <div class="options">
+            <div class="dropdown" id="dropdown">
+                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Get Started <i class="icon">&#9662;</i></a>
+                <div class="dropdown-content">
+                    <!-- Manually create links for each subject -->
+                    <a href="#">MENTORING AND PROFESSIONAL DEVELOPMENT (BMPD102-18)</a>
+                    <a href="#">PROGRAMMING IN PYTHON (UGCA1914)</a>
+                    <a href="#">DATA STRUCTURES (UGCA1915)</a>
+                    <a href="#">COMPUTER NETWORKS LABORATORY (UGCA1916)</a>
+                    <a href="#">PROGRAMMING IN PYTHON LABORATORY (UGCA1917)</a>
+                    <a href="#">DATA STRUCTURES LABORATORY (UGCA1918)</a>
+                    <a href="#">PC ASSEMBLY & TROUBLESHOOTING (UGCA1919)</a>
+                    <a href="#">PC ASSEMBLY & TROUBLESHOOTING LABORATORY (UGCA1920)</a>
+                    <a href="#">MENTORING AND PROFESSIONAL DEVELOPMENT (BMPD302-18)</a>
+                    <a href="#">COMPUTER NETWORKS (UGCA1913)</a>
+                    <button class="submit-btn">Submit</button> <!-- Move submit button inside the dropdown -->
+                </div>
+            </div>
+            <a href="#"><i class="icon">&#128269;</i> Show Results</a>
+        </div>
+    </div>
+
+    <!-- Your content goes here -->
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdown");
+            dropdown.classList.toggle("dropdown-open");
+        }
+    </script>
+
+</body>
+
+</html>
