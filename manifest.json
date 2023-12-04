@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "PCTE Attendance Manager",
+    "version": "1.0",
+    "description": "Displays a 10-second timer on the current webpage.",
+  
+    "action": {
+    },
+    "icons": {
+      "16": "images.png",
+      "32": "images.png",
+      "48": "images.png",
+      "128": "images.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "background" : {
+      "js" : ["background.js"]
+    },
+  
+    "permissions": [
+      "activeTab"
+    ]
+  }
+  
