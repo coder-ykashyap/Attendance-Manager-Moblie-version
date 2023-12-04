@@ -115,10 +115,10 @@ try {
 
   const object_maker = (ssubs) => {
     obj = {};
-    // console.log(att_tabs)
-    // console.log(att_tabs[0].textContent)
-    // console.log(ssubs)
-    // console.log(ssubs[0].textContent)
+    // // console.log(att_tabs)
+    // // console.log(att_tabs[0].textContent)
+    // // console.log(ssubs)
+    // // console.log(ssubs[0].textContent)
 
     let ss_in_c = [];
     index = 0;
@@ -130,16 +130,16 @@ try {
         }
       }
     }
-    // console.log(ss_in_c);
+    // // console.log(ss_in_c);
     ss_in_c[index].click();
     index++;
 
     var in_num = setInterval(() => {
-      // console.log(index)
+      // // console.log(index)
       if (index == ss_in_c.length - 1) {
         clearInterval(in_num);
       }
-      // console.log(ss_in_c[index]);
+      // // console.log(ss_in_c[index]);
       ss_in_c[index].click();
       index++;
     }, 2000);
@@ -158,7 +158,7 @@ try {
         }
       } catch {}
     }
-    // console.log(att_tabs);
+    // // console.log(att_tabs);
 
     for (const atab of att_tabs) {
       atab.addEventListener("click", () => {
@@ -178,7 +178,7 @@ try {
 
     percentage = (n / d) * 100;
 
-    // console.log(percentage);
+    // // console.log(percentage);
 
     if (percentage == 75) {
       advice = "Cannot Miss The Next Class";
@@ -188,7 +188,7 @@ try {
         d++;
         lec_to_be_attended++;
       }
-      // console.log(lec_to_be_attended, "attend Karo");
+      // // console.log(lec_to_be_attended, "attend Karo");
       advice = `Attend Next ${lec_to_be_attended} Classes`;
     } else if (percentage > 75) {
       while ((n / d) * 100 >= 75) {
@@ -196,15 +196,15 @@ try {
         d++;
       }
       if (bunk == 0) {
-        // console.log("you cannot miss the agli class")
+        // // console.log("you cannot miss the agli class")
         advice = "Cannot Miss The Next Class";
       } else {
-        // console.log(bunk, "lecture miss kr do");
+        // // console.log(bunk, "lecture miss kr do");
         advice = `Can Skip Next ${bunk} Lectures`;
       }
     }
 
-    // console.log(advice)
+    // // console.log(advice)
     return advice;
   };
 
@@ -224,17 +224,17 @@ try {
         }
       } catch {}
     }
-    // console.log("**************************************");
-    // console.log(subject);
-    // console.log("Total Lectures = ", Ab + Pr);
-    // console.log("Total Presents = ", Pr);
-    // console.log("Total Absents = ", Ab);
-    // console.log("Percentage = ", (Pr / (Pr + Ab)) * 100);
+    // // console.log("**************************************");
+    // // console.log(subject);
+    // // console.log("Total Lectures = ", Ab + Pr);
+    // // console.log("Total Presents = ", Pr);
+    // // console.log("Total Absents = ", Ab);
+    // // console.log("Percentage = ", (Pr / (Pr + Ab)) * 100);
     advice = advice_maker(Ab, Ab + Pr);
-    // console.log(advice);
+    // // console.log(advice);
     let attobj = { TL: Ab + Pr, Pr: Pr, Ab: Ab, Advice: advice };
     obj[subject] = attobj;
-    // console.log(obj);
+    // // console.log(obj);
   };
 
   const timer = (totaltime) => {
@@ -258,13 +258,13 @@ try {
     let inputs = document
       .getElementById("centeredElement")
       .getElementsByTagName("input");
-    console.log(inputs);
+    // console.log(inputs);
     for (const inpt of inputs) {
       if (inpt.checked == true) {
         selected_subject.push(inpt.parentElement);
       }
     }
-    // console.log(selected_subject,"are selected elems");
+    // // console.log(selected_subject,"are selected elems");
     return selected_subject;
   };
 
@@ -365,7 +365,7 @@ try {
     celem.style.display = "flex";
     celem.style.flexDirection = "column";
     celem.innerHTML = `<div id="resultbox"></div>`;
-    console.log(obj);
+    // // console.log(obj);
     for (const sub of Object.keys(obj)) {
       let sub_elem = document.createElement("div");
       sub_elem.style.width = "600px"
@@ -417,10 +417,11 @@ try {
   document.getElementById("sall").addEventListener("click", sall);
   document.getElementById("desall").addEventListener("click", desall);
   document.getElementById("sub_submit").addEventListener("click", () => {
-    console.log("clicked");
+    // // console.log("clicked");
     // object_maker(subject_Picker());
     let sss = subject_Picker();
-    console.log(sss);
+    // // console.log(sss);
+
 
     let a = document.getElementById("centeredElement");
     a.innerHTML = `<div id="time" style="font-size : 150px;">30</div>`;

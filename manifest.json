@@ -14,7 +14,7 @@
     },
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["http://pcte.feebank.in/Students/attendancereport","http://pcte.feebank.in/Students/AttendanceReport"],
         "js": ["content.js"]
       }
     ],
